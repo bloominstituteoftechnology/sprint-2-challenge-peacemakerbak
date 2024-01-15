@@ -2,11 +2,22 @@
 <html lang="en">
 
 <head>
-  <title>Web Sprint 2 Challenge</title>
+  <title>Web Sprint 2 Challenge PB</title>
   <script id="challenge">
     // 👉 CHALLENGE 1
     function profileActivation(profile, reason) {
 
+      if (profile.active && reason === undefined) {
+        return "confirm status manually"
+      }
+
+      profile.active = !profile.active;
+      if (!profile.active) {
+        profile.reason = reason;
+      } else {
+        delete profile.reason;
+      }
+      return profile;
     }
 
     // 👉 CHALLENGE 2
