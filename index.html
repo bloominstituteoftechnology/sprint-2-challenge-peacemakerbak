@@ -61,6 +61,20 @@
 
     // 👉 CHALLENGE 4
     function scrub(text, forbidden) {
+      if (text === "" || forbidden.length === 0) {
+        return text;
+      }
+
+      let words = text.split(' ')
+
+      for (let i = 0; i < words.length; i++) {
+        if (forbidden.indexOf(words[i]) !== -1) {
+          words[i] = 'x'.repeat(words[i].length);
+        }
+      }
+      return words.join(' ');
+
+
 
     }
 
